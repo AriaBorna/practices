@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فرم تماس با ما</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="text">
+       Contact Us
+    </div>
+    <form id="form" action="#">
+      <p class="error"></p>
+      <p class="success"></p>
+       <div class="form-row">
+          <div class="input-data">
+             <input class="input" type="text">
+             <div class="underline"></div>
+             <label class="lable" for="">First Name</label>
+          </div>
+          <div class="input-data">
+             <input class="input" type="text">
+             <div class="underline"></div>
+             <label class="lable" for="">Last Name</label>
+          </div>
+       </div>
+       <div class="form-row">
+          <div class="input-data">
+             <input class="input" type="email">
+             <div class="underline"></div>
+             <label class="lable" for="">Email</label>
+          </div>
+          <div class="input-data">
+             <input class="input" type="number">
+             <div class="underline"></div>
+             <label class="lable" for="">Phone</label>
+          </div>
+       </div>
+       <div class="form-row">
+       <div class="input-data textarea">
+          <textarea class="input" rows="8" cols="80"></textarea>
+          <br />
+          <div class="underline"></div>
+          <label class="lable" for="">Message</label>
+          <br />
+          <div class="form-row submit-btn">
+             <div class="input-data">
+                <div class="inner"></div>
+                <input type="submit" value="Submit">
+             </div>
+          </div>
+    </form>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
