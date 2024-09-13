@@ -1,0 +1,112 @@
+@media screen and (max-width:1000px) {
+    header{
+        position: relative;
+    }
+    
+    .header_1,
+    .header_1_left,
+    .reg_button,
+    .header_buttons {
+        flex-direction: column;
+        justify-content: center;
+        vertical-align: middle;
+        align-items: center;
+    }
+
+    .menu_h,
+    .logo{
+        margin: 10px;
+    }
+
+    .search{
+        width: 50vw;
+        margin: 15px;
+    }
+
+    .header_1_right,
+    .menu{
+        display: flex;
+        flex-direction: column;
+        vertical-align: middle;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .homepage,
+    .options{
+        flex-direction: column;
+    }
+
+    .title_sub{
+        font-size: 30px;
+    }
+
+    .start_button{
+        display: flex;
+        justify-content: center;
+    }
+
+    .pics img{
+        width: 500px;
+        height: 1000px;
+        object-fit: cover;
+    }
+
+    .brand-title{
+        padding: 25px;
+        font-size: 20px;
+    }
+
+    .brands_icons{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .idea1,
+    .idea3{
+        flex-direction: column;
+        margin: 30px 100px;
+    }
+
+    .idea2{
+        flex-direction: column-reverse;
+        margin: 30px 100px;
+    }
+
+    .video{
+        flex-direction: column;
+    }
+
+    .opions{
+        flex-direction: column;
+    }
+
+    .pod_comment{
+        flex-direction: column;
+    }
+
+    .comment{
+        margin: 25px 0;
+    }
+
+    .toppage{
+        justify-content: center;
+    }
+
+    .site_map{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logos{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .copyright{
+        text-align: center;
+    }
+}
