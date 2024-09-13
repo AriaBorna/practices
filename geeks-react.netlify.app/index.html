@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geeks React</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- style -->
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+
+        .a-menu{
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .mode{
+            background-color: rgb(196, 196, 196);
+            width: 40px;
+            height: 40px;
+            border: none;
+        }
+
+        .buy-btn{
+            background-color:white; 
+            border: 1px solid #754ffe;
+            color: #754ffe;
+        }
+
+        .buy-btn:hover{
+            background-color:#754ffe; 
+            border: 1px solid #754ffe;
+            color: white;
+        }
+
+        .onlin-t{
+            font-size: 60px;
+            font-weight: 700;
+
+        }
+
+        .underline{
+            color: #754ffe;
+            text-decoration: underline;
+            text-decoration-color: #f59e0b;
+        }
+
+        .online-d{
+            font-size: 20px;
+            color: rgb(66, 66, 66);
+        }
+
+        .online-l::before{
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-image: url('assets/icon/Eo_circle_green_checkmark.svg.png');
+            background-size: cover;
+            margin-right: 8px;
+        }
+
+        .online-l{
+            font-size: 15px;
+            color: rgb(107, 107, 107);
+        }
+
+        .online-b{
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            background-color: #0f172a;
+            transition: background-color ease 0.3s;
+        }
+
+        .online-b:hover{
+            background-color: #3c3d41;
+        }
+
+        .team-t{
+            font-weight: 700;
+            color: #94a4b8;
+        }
+
+        .team-logo{
+            width: 120px;
+        }
+
+        .explore{
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .explore-d{
+            font-size: 20px;
+            color: rgb(66, 66, 66);
+        }
+
+        .card{
+            cursor: pointer;
+        }
+
+        .card:hover{
+            box-shadow: 5px 5px 5px rgb(230, 230, 230);
+        }
+
+        .enroll{
+            color: #754ffe;
+            cursor: pointer;
+        }
+
+        .score{
+            font-weight: 700;
+        }
+
+        .score-i img{
+            width: 15px;
+            height: 15px;
+            margin-bottom: 3px;
+        }
+
+        .score-n{
+            font-size: 12px;
+            color: #3c3d41;
+            margin-bottom: 3px;
+        }
+
+        .arrow{
+            font-size: 30px;
+            vertical-align: middle;
+            transition: margin-left ease 0.5s ;
+        }
+
+        .enroll:hover .arrow{
+            margin-left: 15px;
+        }
+
+        .skill-t{
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        .skill-d{
+            font-size: 20px;
+            color: #3c3d41;
+        }
+
+        .certificate-d{
+            color: #3c3d41;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .certificate-d::before{
+            content: '';
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background: url(assets/icon/Eo_circle_purple_checkmark.svg.png);
+            background-size: cover;
+            margin: 20px 10px 0 0;
+        }
+
+        .icon{
+            color: #754ffe;
+        }
+
+        .c-t{
+            font-weight: 700;
+        }
+
+        .advance{
+            background-color: #f1f5f9;
+        }
+
+        .advance-t{
+            font-size: 45px;
+            font-weight: 700;
+            width: 550px;
+        }
+
+        .advance-d{
+            color: #3c3d41;
+            font-size: 20px;
+            font-weight: 500;
+            width: 450px;
+        }
+
+        .advance-b{
+            border: 1px solid #7b99ab;
+            background-color: transparent;
+            font-weight: 600;
+            color:#7b99ab;
+            transition: background-color ease 0.3s ;
+        }
+
+        .advance-b:hover{
+            background-color: #7b99ab;
+            color: white;
+        }
+
+        .advance-icon{
+            background-color: #f1f5f9;
+            margin-top: 1px;
+        }
+
+        .ad-icon{
+            background-color: #cbd5e1;
+            max-width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            position: relative;
+            margin-right: 15px;
+
+        }
+
+        .ad-icon img{
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 12px;
+            left: 13px;
+        }
+
+        .ad-text{
+            font-weight: 700;
+            color: #3c3d41;
+            width: 250px;
+        }
+
+        .up-t{
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        .up-d{
+            font-size: 20px;
+            color: #3c3d41;
+        }
+
+        .cardt-1,
+        .cardt-2{
+            color: #666666;
+            font-size: 14px;
+        }
+
+        .cardt-1::before{
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 14px;
+            background: url(assets/icon/calendar-small-icon-465x512-1wuvg4w9.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+        }
+
+        .cardt-2::before{
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background: url(assets/icon/clock.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+        }
+
+        .up-btn{
+            color: #754ffe;
+            background-color: #c7b8ff;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+
+        .up-btn:hover{
+            color: #754ffe;
+            background-color: #d2c5ff;
+        }
+
+        .s-learn{
+            background-color: #754ffe;
+            height: 310px;
+            max-width: 1100px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .s-learn-t{
+            font-size: 35px;
+            font-weight: 600;
+            color: white;
+            margin: 35px 20px 0 45px;
+            width: 450px;
+        }
+
+        .s-learn-d{
+            font-size: 17px;
+            color: white;
+            margin: 15px 20px 0 45px;
+            width: 400px;
+        }
+
+        .s-learn-b{
+            margin: 35px 20px 0 45px;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 10px;
+            color: white;
+            background-color: #0f172a;
+        }
+
+        .s-learn-b:hover{
+            color: white;
+            background-color: #34363a;
+        }
+
+        .s-learn-p img{
+            margin: 20px 0px 0 150px;
+        }
+
+        footer{
+            margin: 0 85px;
+        }
+
+        .about-t{
+            font-size: 15px;
+            color: #666666;
+        }
+
+        .about-i{
+            width: 40px;
+            cursor: pointer;
+            color: #666666;
+        }
+
+        .about-i:hover{
+            color: #754ffe;
+        }
+
+
+        .about-tt{
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 35px;
+        }
+
+        .about-o{
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .about-o:hover{
+            color: #754ffe;
+        }
+
+        .email{
+            color: #754ffe;
+        }
+
+        .email:hover{
+            color: #9b81fa;
+        }
+
+        .phone{
+            font-weight: 700;
+        }
+
+        .copy-o{
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .copy-o:hover{
+            color: #754ffe;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-lg-4 py-3 justify-content-center align-items-center">
+                    <!-- logo -->
+                    <div class="d-flex flex-row justify-content-center justify-content-lg-start mb-4 mb-lg-0">
+                        <img src="assets/pics/logo.svg" alt="logo">
+                    </div>
+                    <!-- menu -->
+                    <div class="d-flex flex-row justify-content-center mb-4 mb-lg-0">
+                        <ul class="list-group list-group-horizontal list-unstyled">
+                            <li class="dropdown-toggle mx-4" data-toggle="dropdown">
+                                <a class="a-menu" href="#">Landings</a>
+                            </li>
+                            <li class="dropdown-toggle mx-4" data-toggle="dropdown">
+                                <a class="a-menu" href="#">Pages</a>
+                            </li>
+                            <li class="dropdown-toggle mx-4" data-toggle="dropdown">
+                                <a class="a-menu" href="#">Account</a>
+                            </li>
+                            <li class="dropdown-toggle ms-2 me-5" data-toggle="dropdown">
+                                <img class="a-menu dropdown-toggle mx-1" data-toggle="dropdown" src="assets/icon/ellipsis-horizontal.svg" alt="menu" style="width: 15px;">
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Dark mode and buy button -->
+                    <div class="d-flex flex-row justify-content-center justify-content-lg-end">
+                            <button class="mode rounded-circle mx-2">
+                                <img src="assets/icon/sunny.svg" alt="mode">
+                            </button>
+                            <button class="buy-btn rounded-pill mx-2 px-3">
+                                Buy Now
+                            </button>
+                    </div>
+            </div>
+        </div>
+    </header>
+    <!-- online courses -->
+    <section class="container-xl mt-5">
+        <div class="row row-cols-1 row-cols-md-2 text-center text-md-start">
+            <!-- text and button -->
+            <div class="col pe-5">
+                <p class="onlin-t">Learn today’s most in-<span class="underline">demand-skills</span></p>
+                <p class="online-d mt-5">Classes & Courses website template to start creating your stunning website. All templates are fully customizable.</p>
+                <ul class=" mt-5 list-unstyled">
+                    <li class="online-l">No credit card required</li>
+                    <li class="online-l">Customer service 24/7</li>
+                    <li class="online-l">No setup fee</li>
+                    <li class="online-l">Cancel any time</li>
+                </ul>
+                <button class="online-b my-5 px-4 py-3">
+                    Explore Online Courses
+                </button>
+            </div>
+            <!-- image -->
+            <div class="col position-relative p-2 p-lg-5">
+                <img class="online-g1 img-fluid position-absolute top-0 start-0 z-1 d-none d-lg-inline" src="assets/pics/graphics-2.7c8e1a6ad5116b875944cdb5936dbc4d.svg" alt="">
+                <img class="onlin-p img-fluid rounded-5 position-relative z-2" src="assets/pics/skils.9a6983b426cff7d21427.jpg" alt="">
+                <img class="online-g2 img-fluid position-absolute bottom-0 end-0 z-1 d-none d-xxl-inline" src="assets/pics/graphics-1.f2306abb0ad4e006451c89b4fe81889c.svg" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- team -->
+    <section class="container mt-5">
+        <div class="col">
+            <p class="team-t text-center">TRUSTED BY OVER 12,500 GREAT TEAMS</p>
+        </div>
+        <div class="col">
+            <div class="row justify-content-around">
+                <img class="team-logo " src="assets/pics/gray-logo-stripe.6b556d06bcc209f1c051bbdb399131f0.svg" alt="logo">
+                <img class="team-logo " src="assets/pics/gray-logo-airbnb.5908aac3e8062333869d580f4b2f3d59.svg" alt="">
+                <img class="team-logo " src="assets/pics/gray-logo-discord.2e0bae69d24feccf4efdd3f80746031b.svg" alt="">
+                <img class="team-logo " src="assets/pics/gray-logo-intercom.870602b99ded665ecf0c2d5b2ffeb8c4.svg" alt="">
+                <img class="team-logo mt-4 mt-md-0 " src="assets/pics/gray-logo-pinterest.928eaa29223a809cc5554847139d26a9.svg" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- space -->
+    <section class="col-sm-12 " style="height:160px;">
+    </section>
+    <!-- Explore skill courses title -->
+    <section class="container mb-5">
+        <p class="explore">Explore <span class="underline">skill courses</span></p>
+        <p class="explore-d">Online video courses with new additions published every month.</p>
+    </section>
+    <!-- skill courses -->
+    <section class="container ">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 ">
+            <div class="col mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/pics/course/edu-img-1.f4b54d1babacb5e9445a.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Content Writing</h5>
+                      <p class="card-text">
+                        <span class="score">4.9</span>
+                        <span class="score-i">
+                            <img src="assets/icon/Solid_Bright_Green_Star_1.png" alt="">
+                        </span>
+                        <span class="score-n">
+                            (31)
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--geeks-gray-400)" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                        </span>
+                        <span class="score">8</span>
+                        <span class="score-n">Hours</span>
+
+                      </p>
+                      <p class="enroll">Enroll Today <span class="arrow">&#x2192;</span></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/pics/course/edu-img-2.959c45419df9a5839287.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">UI / UX Design</h5>
+                      <p class="card-text">
+                        <span class="score">4.9</span>
+                        <span class="score-i">
+                            <img src="assets/icon/Solid_Bright_Green_Star_1.png" alt="">
+                        </span>
+                        <span class="score-n">
+                            (31)
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--geeks-gray-400)" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                        </span>
+                        <span class="score">8</span>
+                        <span class="score-n">Hours</span>
+
+                      </p>                      
+                      <p class="enroll">Enroll Today <span class="arrow">&#x2192;</span></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/pics/course/edu-img-3.9407d22df6fc94c0f961.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Coding and Development</h5>
+                      <p class="card-text">
+                        <span class="score">4.9</span>
+                        <span class="score-i">
+                            <img src="assets/icon/Solid_Bright_Green_Star_1.png" alt="">
+                        </span>
+                        <span class="score-n">
+                            (31)
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--geeks-gray-400)" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                        </span>
+                        <span class="score">8</span>
+                        <span class="score-n">Hours</span>
+
+                      </p>  
+                      <p class="enroll">Enroll Today <span class="arrow">&#x2192;</span></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/pics/course/edu-img-4.20b351a53ee16ce60c1a.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Photography Courses</h5>
+                      <p class="card-text">
+                        <span class="score">4.9</span>
+                        <span class="score-i">
+                            <img src="assets/icon/Solid_Bright_Green_Star_1.png" alt="">
+                        </span>
+                        <span class="score-n">
+                            (31)
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--geeks-gray-400)" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                        </span>
+                        <span class="score">8</span>
+                        <span class="score-n">Hours</span>
+
+                      </p>  
+                      <p class="enroll">Enroll Today <span class="arrow">&#x2192;</span></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/pics/course/edu-img-5.57f8be2db76b960c826f.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Financial Planning</h5>
+                      <p class="card-text">
+                        <span class="score">4.9</span>
+                        <span class="score-i">
+                            <img src="assets/icon/Solid_Bright_Green_Star_1.png" alt="">
+                        </span>
+                        <span class="score-n">
+                            (31)
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--geeks-gray-400)" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                        </span>
+                        <span class="score">8</span>
+                        <span class="score-n">Hours</span>
+
+                      </p>  
+                      <p class="enroll">Enroll Today <span class="arrow">&#x2192;</span></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/pics/course/edu-img-6.8d9f4cc393316a4c3426.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Content Marketing 201</h5>
+                      <p class="card-text">
+                        <span class="score">4.9</span>
+                        <span class="score-i">
+                            <img src="assets/icon/Solid_Bright_Green_Star_1.png" alt="">
+                        </span>
+                        <span class="score-n">
+                            (31)
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--geeks-gray-400)" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                        </span>
+                        <span class="score">8</span>
+                        <span class="score-n">Hours</span>
+
+                      </p>  
+                      <p class="enroll">Enroll Today <span class="arrow">&#x2192;</span></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/pics/course/edu-img-7.369b11ba52a7324fe441.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Learn a Language</h5>
+                      <p class="card-text">
+                        <span class="score">4.9</span>
+                        <span class="score-i">
+                            <img src="assets/icon/Solid_Bright_Green_Star_1.png" alt="">
+                        </span>
+                        <span class="score-n">
+                            (31)
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--geeks-gray-400)" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                        </span>
+                        <span class="score">8</span>
+                        <span class="score-n">Hours</span>
+
+                      </p>  
+                      <p class="enroll">Enroll Today <span class="arrow">&#x2192;</span></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/pics/course/edu-img-8.21a0f663592de12590c1.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Health Wellness</h5>
+                      <p class="card-text">
+                        <span class="score">4.9</span>
+                        <span class="score-i">
+                            <img src="assets/icon/Solid_Bright_Green_Star_1.png" alt="">
+                        </span>
+                        <span class="score-n">
+                            (31)
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--geeks-gray-400)" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                        </span>
+                        <span class="score">8</span>
+                        <span class="score-n">Hours</span>
+
+                      </p>  
+                      <p class="enroll">Enroll Today <span class="arrow">&#x2192;</span></p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+    <!-- foundational skills title -->
+    <section class="row text-center my-5 ">
+        <p class="skill-t">Building strong <span class="underline">foundational skills</span></p>
+        <p class="skill-d">Online courses certification section design for showcase your certificate program features.</p>
+    </section>
+    <!-- foundational skills Certificate -->
+    <section class="container">
+        <div class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center">
+            <div class="col">
+                <img class="img-fluid" src="assets/pics/certificate.9e265d362cda66dd2641.jpg" alt="certificate">
+                <p class="certificate-d">Completion certificate awarded on every course completion</p>
+            </div>
+            <div class="col">
+                <div class="row row-cols-1 row-cols-lg-2 align-items-center justify-content-center">
+                    <div class="col mt-5 mt-md-0">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z"></path></svg>
+                        <p class="c-t mt-3">Learn from Industry Experts</p>
+                        <p>Lorem ipsum dolor sit amet, conse ctetur adipisc amus ac iaculis arcu.</p>
+                    </div>
+                    <div class="col mt-5 mt-md-0">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>
+                        <p class="c-t mt-3">Free Resources</p>
+                        <p>Pellentesque sagittis placerat mollii purus onvallis venenatis asapien.</p>
+                    </div>
+                    <div class="col mt-5 mt-md-0">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor"><path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"></path><path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z"></path></svg>
+                        <p class="c-t mt-3">Learn Anytime, Anywhere</p>
+                        <p>Integer ultricies lorem nec erat fau euismod ipsum nislnec leo iaculis.</p>
+                    </div>
+                    <div class="col mt-5 mt-md-0">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor"><path d="m11.42 2 3.428 6-3.428 6H4.58L1.152 8 4.58 2h6.84zM4.58 1a1 1 0 0 0-.868.504l-3.428 6a1 1 0 0 0 0 .992l3.428 6A1 1 0 0 0 4.58 15h6.84a1 1 0 0 0 .868-.504l3.429-6a1 1 0 0 0 0-.992l-3.429-6A1 1 0 0 0 11.42 1H4.58z"></path><path d="M6.848 5.933a2.5 2.5 0 1 0 2.5 4.33 2.5 2.5 0 0 0-2.5-4.33zm-1.78 3.915a3.5 3.5 0 1 1 6.061-3.5 3.5 3.5 0 0 1-6.062 3.5z"></path></svg>
+                        <p class="c-t mt-3">Skill-based Learning</p>
+                        <p>Duis sed sollicitudin narcu mi, faucibus in sapien non, auctor placerat arcu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Advance your career -->
+    <section class="container-fluid advance">
+        <div class="container-lg advance2">
+            <div class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center">
+                <div class="col mt-5">
+                    <p class="advance-t">Learn latest Skills; Advance <span class="underline">your career</span></p>
+                    <p class="advance-d text-justify mt-3">Donec sit quam lacinia et sed et. Lectus in pellent esque sed a eget mauris. Tincidunt tincidunt sit quisque orci turpis nulla velit.</p>
+                    <button class="advance-b py-2 px-3 rounded-2">
+                        Get Started
+                    </button>
+                </div>
+                <div class="col">
+                    <iframe class="d-flex border border-gray-100 border-4 rounded-3 mt-5 my-lg-5" width="500" height="300" src="https://www.youtube.com/embed/JRzWRZahOVU" title="Use This To Control Your Brain - Mel Robbins" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Advance your career Icon -->
+    <section class="container-fluid advance-icon">
+        <div class="container-lg advance2">
+            <div class="row row-cols-1 row-cols-xl-3 justify-content-center align-items-center">
+                <div class="d-flex flex-row mt-3">
+                    <div class="col ad-icon">
+                        <img src="assets/icon/play-332.png" alt="play">
+                    </div>
+                    <p class="ad-text">Learn in- skills with over 24,000 video courses</p>
+                </div>
+                <div class="d-flex flex-row mt-3">
+                    <div class="col ad-icon">
+                        <img src="assets/icon/black-star.png" alt="play">
+                    </div>
+                    <p class="ad-text">Learn in- skills with over 24,000 video courses</p>
+                </div>
+                <div class="d-flex flex-row mt-3">
+                    <div class="col ad-icon">
+                        <img src="assets/icon/infinity.png" alt="play">
+                    </div>
+                    <p class="ad-text">Learn in- skills with over 24,000 video courses</p>
+                </div>
+            </div>
+        </div>
+    </section>       
+    <!-- Upcoming title -->
+    <section class="container mt-5">
+        <p class="up-t">Upcoming <span class="underline">education webinars</span></p>
+        <p class="up-d">Online webinars are amazing opportunities to have fun and learn.</p>
+    </section>
+    <!-- Upcoming cards -->
+    <section class="container my-5 ">
+        <div class="row row-cols-1 row-cols-lg-2 row-cols-xxl-3">
+            <div class="col">
+                <div class="card mb-3" style="width: 25rem;">
+                    <img src="assets/pics/edu-webinar-1.b2eef65b0116737300bd.jpg" class="card-img-top" alt="webinar">
+                    <div class="card-body">
+                      <h5 class="card-title text-truncate">Education Edition Deployment And Set Up</h5>
+                      <p class="card-text cardt-1 mt-4">Thu, November 10, 2023</p>
+                      <p class="card-text cardt-2 mb-4">6:00 PM – 8:00 PM GMT</p>
+                      <a href="#" class="btn up-btn">Register Now</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3" style="width: 25rem;">
+                    <img src="assets/pics/edu-webinar-2.c216895df7a2a8c8b7c1.jpg" class="card-img-top" alt="webinar">
+                    <div class="card-body">
+                      <h5 class="card-title text-truncate">Build a Collaborative Classroom</h5>
+                      <p class="card-text cardt-1 mt-4">June 26, 2023</p>
+                      <p class="card-text cardt-2 mb-4">8:00 AM PDT</p>
+                      <a href="#" class="btn up-btn">Register Now</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3" style="width: 25rem;">
+                    <img src="assets/pics/edu-webinar-3.e9cd77d780716df53ab7.jpg" class="card-img-top" alt="webinar">
+                    <div class="card-body">
+                      <h5 class="card-title text-truncate">Increase Reading And Language Skill</h5>
+                      <p class="card-text cardt-1 mt-4">November 10, 2023</p>
+                      <p class="card-text cardt-2 mb-4">10:00 PM IST</p>
+                      <a href="#" class="btn up-btn">Register Now</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+    <!-- start learning -->
+    <section class="container mt-5 s-learn ">
+        <div class="row row-cols-1 row-cols-xl-2">
+            <div class="col">
+                <p class="s-learn-t">Let’s find the right course for you!</p>
+                <p class="s-learn-d">…and achieve their learning goals. With our expert tutors, your goals are closer than ever!</p>
+                <button class="s-learn-b">
+                    Start learning
+                </button>
+            </div>
+            <div class="col s-learn-p d-none d-xl-inline">
+                <img src="assets/pics/course.8a32bdc7e3c0c4e664cf.png" alt="course">
+            </div>
+        </div>
+    </section>
+    <!-- space -->
+    <section class="col-sm-12 " style="height:150px;">
+    </section>
+    <!-- footer -->
+    <footer>
+        <!-- footer top -->
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                <!-- about us -->
+                <!-- social media icon -->
+                <div class="col about">
+                    <div class="d-flex flex-row justify-content-center justify-content-lg-start mb-4 mb-lg-0">
+                        <img src="assets/pics/logo.svg" alt="logo">
+                    </div>
+                    <p class="about-t mt-5">Geek is feature-rich components and beautifully Bootstrap UIKit for developers, built with bootstrap responsive framework.</p>
+                    <div class="row row-cols-3">
+                        <div class="d-flex about-i">
+                            <svg viewBox="0 0 24 24" role="presentation" style="width: 1.05rem; height: 1.05rem;"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" style="fill: currentcolor;"></path></svg>
+                        </div>
+                        <div class="d-flex about-i">
+                            <svg viewBox="0 0 24 24" role="presentation" style="width: 1.05rem; height: 1.05rem;"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" style="fill: currentcolor;"></path></svg>
+                        </div>
+                        <div class="d-flex about-i">
+                            <svg viewBox="0 0 24 24" role="presentation" style="width: 1.05rem; height: 1.05rem;"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" style="fill: currentcolor;"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- company -->
+                <div class="col company">
+                    <ul class="about-list list-unstyled">
+                        <li class="about-tt">Company</li>
+                        <li class="about-o">About</li>
+                        <li class="about-o">Pricing</li>
+                        <li class="about-o">Blog</li>
+                        <li class="about-o">Careers</li>
+                        <li class="about-o">Contact</li>
+                    </ul>
+                </div>
+                <!-- Support -->
+                <div class="col support">
+                    <ul class="about-list list-unstyled">
+                        <li class="about-tt">Support</li>
+                        <li class="about-o">Help and Suppor</li>
+                        <li class="about-o">Become Instructor</li>
+                        <li class="about-o">Get the app</li>
+                        <li class="about-o">FAQ’s</li>
+                        <li class="about-o">Tutorial</li>
+                    </ul>
+                </div>
+                <!-- Get in touch -->
+                <div class="col Get in touch ">
+                    <p class="about-tt">Get in touch</p>
+                    <p class="about-t">339 McDermott Points Hettingerhaven, NV 15283</p>
+                    <p >Email: <a class="text-decoration-none email" href="#">support@geeksui.com</a></p>
+                    <p>Phone: <span class="phone">(000) 123 456 789</span></p>
+                    <div class="row row-cols-2">
+                        <div class="col">
+                            <img class="img-fluid" src="assets/pics/appstore.b464860c93223b3fc15fc7d026bcdca0.svg" alt="appstore">
+                        </div>
+                        <div class="col">
+                            <img class="img-fluid" src="assets/pics/playstore.f23c3dcbde32e767203274d4b1749cc7.svg" alt="playstore">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copy right -->
+        <div class="container-fluid copy border-top mt-2">
+            <div class="row row-cols-1 row-cols-md-2 justify-content-between">
+                <div class="col mt-2">
+                    <p>© 2023 Geeks-UI, Inc. All Rights Reserved</p>
+                </div>
+                <div class="col mt-2">
+                    <div class="row row-cols-4">
+                        <div class="col">
+                            <p class="copy-o">Privacy Policy</p>
+                        </div>
+                        <div class="col">
+                            <p class="copy-o">Cookie Notice</p>
+                        </div>
+                        <div class="col">
+                            <p class="copy-o">Do Not Sell My Personal Information</p>
+                        </div>
+                        <div class="col">
+                            <p class="copy-o">Terms of Use</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

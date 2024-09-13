@@ -1,0 +1,376 @@
+body{
+    overflow-x: hidden;
+}
+
+.a-menu{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mode{
+    background-color: rgb(196, 196, 196);
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+.buy-btn{
+    background-color:white; 
+    border: 1px solid #754ffe;
+    color: #754ffe;
+}
+
+.buy-btn:hover{
+    background-color:#754ffe; 
+    border: 1px solid #754ffe;
+    color: white;
+}
+
+.onlin-t{
+    font-size: 60px;
+    font-weight: 700;
+
+}
+
+.underline{
+    color: #754ffe;
+    text-decoration: underline;
+    text-decoration-color: #f59e0b;
+}
+
+.online-d{
+    font-size: 20px;
+    color: rgb(66, 66, 66);
+}
+
+.online-l::before{
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url('assets/icon/Eo_circle_green_checkmark.svg.png');
+    background-size: cover;
+    margin-right: 8px;
+}
+
+.online-l{
+    font-size: 15px;
+    color: rgb(107, 107, 107);
+}
+
+.online-b{
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background-color: #0f172a;
+    transition: background-color ease 0.3s;
+}
+
+.online-b:hover{
+    background-color: #3c3d41;
+}
+
+.team-t{
+    font-weight: 700;
+    color: #94a4b8;
+}
+
+.team-logo{
+    width: 120px;
+}
+
+.explore{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.explore-d{
+    font-size: 20px;
+    color: rgb(66, 66, 66);
+}
+
+.card{
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 5px rgb(230, 230, 230);
+}
+
+.enroll{
+    color: #754ffe;
+    cursor: pointer;
+}
+
+.score{
+    font-weight: 700;
+}
+
+.score-i img{
+    width: 15px;
+    height: 15px;
+    margin-bottom: 3px;
+}
+
+.score-n{
+    font-size: 12px;
+    color: #3c3d41;
+    margin-bottom: 3px;
+}
+
+.arrow{
+    font-size: 30px;
+    vertical-align: middle;
+    transition: margin-left ease 0.5s ;
+}
+
+.enroll:hover .arrow{
+    margin-left: 15px;
+}
+
+.skill-t{
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.skill-d{
+    font-size: 20px;
+    color: #3c3d41;
+}
+
+.certificate-d{
+    color: #3c3d41;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.certificate-d::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(assets/icon/Eo_circle_purple_checkmark.svg.png);
+    background-size: cover;
+    margin: 20px 10px 0 0;
+}
+
+.icon{
+    color: #754ffe;
+}
+
+.c-t{
+    font-weight: 700;
+}
+
+.advance{
+    background-color: #f1f5f9;
+}
+
+.advance-t{
+    font-size: 45px;
+    font-weight: 700;
+    width: 550px;
+}
+
+.advance-d{
+    color: #3c3d41;
+    font-size: 20px;
+    font-weight: 500;
+    width: 450px;
+}
+
+.advance-b{
+    border: 1px solid #7b99ab;
+    background-color: transparent;
+    font-weight: 600;
+    color:#7b99ab;
+    transition: background-color ease 0.3s ;
+}
+
+.advance-b:hover{
+    background-color: #7b99ab;
+    color: white;
+}
+
+.advance-icon{
+    background-color: #f1f5f9;
+    margin-top: 1px;
+}
+
+.ad-icon{
+    background-color: #cbd5e1;
+    max-width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 15px;
+
+}
+
+.ad-icon img{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 12px;
+    left: 13px;
+}
+
+.ad-text{
+    font-weight: 700;
+    color: #3c3d41;
+    width: 250px;
+}
+
+.up-t{
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.up-d{
+    font-size: 20px;
+    color: #3c3d41;
+}
+
+.cardt-1,
+.cardt-2{
+    color: #666666;
+    font-size: 14px;
+}
+
+.cardt-1::before{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    background: url(assets/icon/calendar-small-icon-465x512-1wuvg4w9.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.cardt-2::before{
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(assets/icon/clock.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.up-btn{
+    color: #754ffe;
+    background-color: #c7b8ff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.up-btn:hover{
+    color: #754ffe;
+    background-color: #d2c5ff;
+}
+
+.s-learn{
+    background-color: #754ffe;
+    height: 310px;
+    max-width: 1100px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.s-learn-t{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    margin: 35px 20px 0 45px;
+    width: 450px;
+}
+
+.s-learn-d{
+    font-size: 17px;
+    color: white;
+    margin: 15px 20px 0 45px;
+    width: 400px;
+}
+
+.s-learn-b{
+    margin: 35px 20px 0 45px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    background-color: #0f172a;
+}
+
+.s-learn-b:hover{
+    color: white;
+    background-color: #34363a;
+}
+
+.s-learn-p img{
+    margin: 20px 0px 0 150px;
+}
+
+footer{
+    margin: 0 85px;
+}
+
+.about-t{
+    font-size: 15px;
+    color: #666666;
+}
+
+.about-i{
+    width: 40px;
+    cursor: pointer;
+    color: #666666;
+}
+
+.about-i:hover{
+    color: #754ffe;
+}
+
+
+.about-tt{
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 35px;
+}
+
+.about-o{
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.about-o:hover{
+    color: #754ffe;
+}
+
+.email{
+    color: #754ffe;
+}
+
+.email:hover{
+    color: #9b81fa;
+}
+
+.phone{
+    font-weight: 700;
+}
+
+.copy-o{
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.copy-o:hover{
+    color: #754ffe;
+}
